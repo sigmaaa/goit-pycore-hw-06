@@ -39,7 +39,10 @@ class Field:
 
 class Name(Field):
     """Represents a name field inheriting from the generic Field class."""
-
+    def __init__(self, name):
+        super().__init__(name)
+        if not name:
+            raise ValueError("Name is a required field")
 
 class Phone(Field):
     """
